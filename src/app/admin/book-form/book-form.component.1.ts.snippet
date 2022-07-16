@@ -1,0 +1,14 @@
+// ...
+/*BS*/import { atLeastOneValue } from '../shared/validators';/*BE*/
+
+@Component({ /* ... */ })
+export class BookFormComponent implements OnChanges {
+  // ...
+  private buildAuthorsArray(authors: string[]) {
+    return new FormArray(
+      authors.map(v => new FormControl(v, { nonNullable: true })),
+      /*BS*/atLeastOneValue/*BE*/
+    );
+  }
+  // ...
+}
