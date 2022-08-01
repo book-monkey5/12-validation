@@ -6,16 +6,13 @@ export class FormErrorsComponent {
   constructor(/*BS*/private form: FormGroupDirective/*BE*/) {}
 
   get errors(): string[] {
-    /*BS*/const control =
-      this.controlName &&
-      this.form.control.get(this.controlName);
+    /*BS*/if (!this.controlName) {
+      return [];
+    }
 
-    if (
-      !control ||
-      !this.messages ||
-      !control.errors ||
-      !control.touched
-    ) {
+    const control = this.form.control.get(this.controlName);
+
+    if (!control || !control.errors || !control.touched) {
       return [];
     }/*BE*/
   }
