@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subject, debounceTime, distinctUntilChanged, filter, switchMap, tap, of, Observable } from 'rxjs';
+import { Subject, debounceTime, distinctUntilChanged, filter, switchMap, tap, Observable } from 'rxjs';
 
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
